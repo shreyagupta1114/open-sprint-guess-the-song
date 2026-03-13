@@ -20,7 +20,7 @@ const songs = [
 {emoji:"🔫🙋🏻‍♀️💃🏻", answer:"bandook meri laila", audio:"chorus/bandook.mp3"},
 {emoji:"🚶🏻‍♀️🕘🕛", answer:"chalti hai kya 9 se 12", audio:"chorus/9sebarah.mp3"},
 {emoji:"🌕🫣🌥️", answer:"chand chupa badal mei", audio:"chorus/chandchupa.mp3"},
-{emoji:"🦛🌻", answer:"genda fool", audio:"chorus/gendafool.mp3"},
+{emoji:"🦛🌻", answer:"genda phool", audio:"chorus/gendafool.mp3"},
 {emoji:"❤️🙅🏻🪔", answer:"dil na diya", audio:"chorus/dilnadiya.mp3"},
 
 {emoji:"1️⃣👀🪄🔮", answer:"paheli nazar mei aesa jadu kar diya", audio:"chorus/pahelnazar.mp3"},
@@ -96,5 +96,6 @@ document.getElementById("result").innerText =
 "Game Over! Your Score: " + score + " / " + songs.length;
 
 }
+
 
 }
