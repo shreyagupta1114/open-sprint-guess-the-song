@@ -1,56 +1,135 @@
-body{
-    background-color:#F6E27F;
-    font-family: Arial, sans-serif;
-    margin:0;
-}
-/* Start Page */
-#startPage{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+/* Import a fun, bubbly font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;800&display=swap');
+
+body {
+  font-family: 'Baloo 2', cursive;
+  
+  /* A smooth, buttery yellow gradient */
+  background: linear-gradient(135deg, #F6E27F 0%, #ffebb5 100%);
+  
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 50px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-h1{
-    font-size:50px;
-    margin-bottom:30px;
+
+h1, h2 {
+  color: #d81b60;
+  text-shadow: 2px 2px 0px #fff;
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-#startBtn{
-    padding:12px 25px;
-    font-size:18px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
+#emoji {
+  font-size: 5rem;
+  margin: 20px 0;
+  /* The continuous bouncing animation */
+  animation: bounce 2s infinite; 
 }
 
-/* Level Page */
-#levelPage{
-    display:none;
-    text-align:center;
-    margin-top:150px;
+/* Make the input box big, chunky, and friendly */
+input[type="text"] {
+  padding: 15px 20px;
+  font-size: 1.5rem;
+  border: 4px solid #d81b60;
+  border-radius: 30px;
+  outline: none;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  font-family: 'Baloo 2', cursive;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  transition: border-color 0.3s;
 }
 
-h2{
-    font-size:55px;
+input[type="text"]:focus {
+  border-color: #ff4081;
 }
 
-#emoji{
-    font-size:100px;
-    margin:40px;
+/* Chunky, interactive buttons */
+button {
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  font-family: 'Baloo 2', cursive;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px 5px;
+  box-shadow: 0px 5px 0px #c60055; /* 3D button effect */
+  transition: all 0.2s ease-in-out;
 }
 
-button{
-    padding:12px 20px;
-    font-size:18px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
+button:hover {
+  background-color: #ff79b0;
+  /* The funny pop and tilt effect on hover */
+  transform: scale(1.1) rotate(-3deg); 
 }
 
-#result{
-    margin-top:20px;
-    font-size:22px;
+button:active {
+  /* Makes the button "press down" when clicked */
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px #c60055;
+}
+
+/* Different colors for Hint and Skip buttons to make them pop */
+#hintBtn { background-color: #ffb300; box-shadow: 0px 5px 0px #ff8f00; }
+#hintBtn:hover { background-color: #ffca28; }
+
+#skipBtn { background-color: #00bcd4; box-shadow: 0px 5px 0px #00838f; }
+#skipBtn:hover { background-color: #4dd0e1; }
+
+#result {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  min-height: 35px; /* Prevents the screen from jumping when text appears */
+}
+
+/* --- ANIMATIONS --- */
+
+/* The continuous bounce for the emojis */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-30px); }
+  60% { transform: translateY(-15px); }
+}
+
+/* The angry shake for wrong answers */
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-15px) rotate(-5deg); }
+  50% { transform: translateX(15px) rotate(5deg); }
+  75% { transform: translateX(-15px) rotate(-5deg); }
+  100% { transform: translateX(0); }
+}
+/* Voice Recognition Styles */
+#micBtn { 
+  background-color: #8e24aa; /* A cool purple to stand out */
+  box-shadow: 0px 5px 0px #6a1b9a; 
+}
+#micBtn:hover { background-color: #ab47bc; }
+
+/* The pulse animation when listening */
+.pulse {
+  animation: pulse-ring 1s infinite;
+  background-color: #e53935 !important; /* Turns red when recording */
+  box-shadow: 0px 5px 0px #b71c1c !important;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(0.95); }
 }
