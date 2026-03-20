@@ -1,50 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<title>Guess the Bollywood Song</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <title>Guess the Bollywood Song</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- START PAGE -->
-<div id="startPage">
+  <div id="startPage">
+    <h1>🎵 Guess the Bollywood Song 🎵</h1>
+    <button id="startBtn">Start Game</button>
+  </div>
 
-<h1>🎵 Guess the Bollywood Song 🎵</h1>
+  <div id="levelPage" style="display:none;">
+    <h2 id="songHeading">Song 1</h2>
 
-<button id="startBtn">Start Game</button>
+    <div id="emoji" style="font-size: 3rem; margin: 20px 0;">⏳ Loading...</div>
+    
+    <p id="hintDisplay" style="color: gray; font-style: italic; min-height: 20px;"></p>
 
-</div>
+    <div id="answerBox">
+      <input type="text" id="textAnswer" placeholder="Type the song name">
+      <br><br>
+      
+      <div id="result" style="margin-bottom: 15px; font-weight: bold;"></div>
+      
+      <button id="checkBtn">Submit Answer</button> <button id="micBtn">🎤 Speak Answer</button>
+      <button id="hintBtn">Get a Hint</button>
+      <button id="skipBtn">Skip Song</button>
+    </div>
+  </div>
 
-
-<!-- LEVEL PAGE -->
-<div id="levelPage" style="display:none;">
-
-<h2>Level 1</h2>
-
-<div id="emoji">🟦👀</div>
-
-<div id="answerBox">
-
-<input type="text" id="textAnswer" placeholder="Type the song name">
-
-<br><br>
-  
-<div id="result"></div>
-  
-<button id="checkBtn">Submit Answer</button>
-
-</div>
-
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
-
 </html>
